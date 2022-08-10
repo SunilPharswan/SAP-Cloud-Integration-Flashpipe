@@ -29,8 +29,8 @@ jobs:
           PACKAGE_ID: FlashpipeDemoPackage
           PACKAGE_NAME: "Flashpipe Demo Package"
       # Deploy runtime
-      - name: 'Deploy iflow to runtime'
-        run: /usr/bin/deploy_runtime_artifact.sh
-        shell: bash
-        env:
-          IFLOW_ID: flashpipedemoiflow
+      #- name: 'Deploy iflow to runtime'
+      #  run: /usr/bin/deploy_runtime_artifact.sh
+      #  shell: bash
+      #  env:
+      #    IFLOW_ID: flashpipedemoiflow
