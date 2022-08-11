@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 SAP-RuntimeProfile: iflmap
 Bundle-SymbolicName: flashpipedemoiflow
 Bundle-Name: flashpipe demo iflow
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Bundle-ManifestVersion: 2
 Origin-Bundle-SymbolicName: flashpipedemoiflow
 SAP-NodeType: IFLMAP
