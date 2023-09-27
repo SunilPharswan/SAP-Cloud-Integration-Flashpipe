@@ -1,4 +1,4 @@
-name: Tenant Snapshot
+name: Tenant Snapshot New
 on:
   workflow_dispatch:
     inputs:
@@ -20,8 +20,8 @@ jobs:
       - name: 'Take a snapshot'
         uses: engswee/flashpipe-action/snapshot@v1
         with:
-          tmn-host: equaliseit.it-cpi023.cfapps.eu20-001.hana.ondemand.com
-          oauth-host: equaliseit.authentication.eu20.hana.ondemand.com
+          tmn-host: 9f7ca66btrial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com
+          oauth-host: 9f7ca66btrial.authentication.us10.hana.ondemand.com
           oauth-clientid: ${{ secrets.DEV_CLIENT_ID }}
           oauth-clientsecret: ${{ secrets.DEV_CLIENT_SECRET }}
           draft-handling: ${{ github.event.inputs.draft }}
