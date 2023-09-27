@@ -1,12 +1,13 @@
-name: Postman Test
-
+name: Postman and Snap
 on:
   workflow_dispatch:
     inputs:
+      draft:
+        description: '(Optional) Draft handling - SKIP (default value if empty), ADD, ERROR'
+        required: false
       message:
         description: '(Optional) Commit message'
         required: false
-
 jobs:
   automated-api-tests:
     runs-on: ubuntu-latest
@@ -20,3 +21,22 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "12879191-cb01fcb6-b930-401c-bc40-aa7f57285e70"
+          
+  take_snapshot:
+    needs: automated-api-tests
+    runs-on: ubuntu-latest
+    container:
+      image: engswee/flashpipe:3.0.0
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 'Take a snapshot'
+        uses: engswee/flashpipe-action/snapshot@v1
+        with:
+          tmn-host: 9f7ca66btrial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com
+          oauth-host: 9f7ca66btrial.authentication.us10.hana.ondemand.com
+          oauth-clientid: ${{ secrets.DEV_CLIENT_ID }}
+          oauth-clientsecret: ${{ secrets.DEV_CLIENT_SECRET }}
+          draft-handling: ${{ github.event.inputs.draft }}
+          git-commit-msg: ${{ github.event.inputs.message }}
