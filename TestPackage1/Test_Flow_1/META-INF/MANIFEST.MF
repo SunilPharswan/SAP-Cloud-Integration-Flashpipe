@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 SAP-RuntimeProfile: iflmap
 Bundle-SymbolicName: Test_Flow_1; singleton:=true
 Bundle-Name: Test Flow 1
-Bundle-Version: 1.0.1
+Bundle-Version: 1.0.2
 Bundle-ManifestVersion: 2
 Origin-Bundle-SymbolicName: Test_Flow_1
 SAP-NodeType: IFLMAP
